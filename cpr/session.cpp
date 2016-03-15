@@ -372,7 +372,13 @@ Response Session::Impl::makeRequest(CURL* curl) {
     curl_slist_free_all(raw_cookies);
 
     auto header = cpr::util::parseHeader(header_string);
-    response_string = cpr::util::parseResponse(response_string);
+    auto content_length = header.find("Content-Length");
+    if (content_length != header.end()) {
+        response_string = cpr::util::parseResponse(response_string, std::stoul(content_length->second));
+    }
+    else {
+        response_string = cpr::util::parseResponse(response_string);
+    }
     return Response{response_code, response_string, header, raw_url, elapsed, cookies, error};
 }
 

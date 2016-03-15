@@ -12,6 +12,7 @@ namespace util {
 
 Header parseHeader(const std::string& headers);
 std::string parseResponse(const std::string& response);
+std::string parseResponse(const std::string& response, std::size_t size);
 size_t writeFunction(void* ptr, size_t size, size_t nmemb, std::string* data);
 std::vector<std::string> split(const std::string& to_split, char delimiter);
 std::string urlEncode(const std::string& response);
