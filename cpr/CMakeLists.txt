@@ -15,6 +15,7 @@ add_library(${CPR_LIBRARIES}
     parameters.cpp
     payload.cpp
     proxies.cpp
+    proxyauth.cpp
     session.cpp
     util.cpp
 
@@ -33,6 +34,7 @@ add_library(${CPR_LIBRARIES}
     "${CPR_INCLUDE_DIRS}/cpr/parameters.h"
     "${CPR_INCLUDE_DIRS}/cpr/payload.h"
     "${CPR_INCLUDE_DIRS}/cpr/proxies.h"
+    "${CPR_INCLUDE_DIRS}/cpr/proxyauth.h"
     "${CPR_INCLUDE_DIRS}/cpr/response.h"
     "${CPR_INCLUDE_DIRS}/cpr/session.h"
     "${CPR_INCLUDE_DIRS}/cpr/timeout.h"

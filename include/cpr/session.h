@@ -8,6 +8,7 @@
 #include "cookies.h"
 #include "cprtypes.h"
 #include "digest.h"
+#include "proxyauth.h"
 #include "multipart.h"
 #include "parameters.h"
 #include "payload.h"
@@ -29,6 +30,7 @@ class Session {
     void SetTimeout(const Timeout& timeout);
     void SetAuth(const Authentication& auth);
     void SetDigest(const Digest& auth);
+    void SetProxyAuth(const ProxyAuth& auth);
     void SetPayload(Payload&& payload);
     void SetPayload(const Payload& payload);
     void SetProxies(Proxies&& proxies);
@@ -49,6 +51,7 @@ class Session {
     void SetOption(const Timeout& timeout);
     void SetOption(const Authentication& auth);
     void SetOption(const Digest& auth);
+    void SetOption(const ProxyAuth& auth);
     void SetOption(Payload&& payload);
     void SetOption(const Payload& payload);
     void SetOption(Proxies&& proxies);
